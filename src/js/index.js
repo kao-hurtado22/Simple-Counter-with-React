@@ -1,12 +1,12 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 // include your styles into the webpack bundle
 import "../styles/index.css";
 
-function simpleCounter(props) {
+function SimpleCounter(props) {
 	return (
 		<div className="bigCounter">
 			<div className="calendar">
@@ -19,11 +19,11 @@ function simpleCounter(props) {
 		</div>
 	);
 }
-simpleCounter.propTypes = {
-	digitFour: propTypes.number,
-	digitThree: propTypes.number,
-	digitTwo: propTypes.number,
-	digitOne: propTypes.number,
+SimpleCounter.propTypes = {
+	digitFour: PropTypes.number,
+	digitThree: PropTypes.number,
+	digitTwo: PropTypes.number,
+	digitOne: PropTypes.number,
 };
 
 let Counter = 0;
@@ -35,13 +35,12 @@ setInterval(function () {
 
 	console.log(four, three, two, one);
 	Counter++;
-
 	ReactDOM.render(
-		<simpleCounter
-			digiOne={one}
-			digiTwo={two}
-			digiThree={three}
-			digiFour={four}
+		<SimpleCounter
+			digitOne={one}
+			digitTwo={two}
+			digitThree={three}
+			digitFour={four}
 		/>,
 		document.querySelector("#app")
 	);
